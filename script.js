@@ -5,18 +5,20 @@ let ready = false;
 let imagesLoaded = 0;
 let totalImages = 0;
 let photoArrays = [];
+let initialLoad = true;
 
 // Unsplash API
-const count = 30;
+let count = 10;
+let query = 'nature green';
+let orientation = 'landscape';
 const apiKey = 'FlfzKo1uEkXxvQxveaFhC3P8Sh721oujqBnUG13XA7M';
-
-const apiUrl = `https://api.unsplash.com/photos/random?client_id=${apiKey}&count=${count}`;
+let apiUrl = `https://api.unsplash.com/photos/random?client_id=${apiKey}&query=${query}&orientation=${orientation}&count=${count}`;
 
 // Check if all images were loaded
 function imageLoaded() {
   imagesLoaded++;
   if (imagesLoaded === totalImages) {
-    loader.hidden = true;
+    // loader.hidden = true;
     ready = true;
   }
 }
@@ -61,6 +63,11 @@ async function getPhotos() {
     const response = await fetch(apiUrl);
     photoArrays = await response.json();
     displayPhoto();
+    if (initialLoad) {
+      initialLoad = false;
+      count = 30;
+      apiUrl = `https://api.unsplash.com/photos/random?client_id=${apiKey}&count=${count}`;
+    }
   } catch (error) {
 
   }
