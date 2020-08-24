@@ -12,30 +12,17 @@ body {
 
 h1 {
 	text-align: center;
-	margin-top: 24px;
+	margin: 1.4rem 0 !important;
 	margin-bottom: 16px;
 	font-size: 40px;
-	letter-spacing: 5px;
-	text-transform: uppercase;
+	letter-spacing: 2px;
+	color: #cc5055cf;
 }
 
 /* Loader */
 .loader {
-	/* position: fixed;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	background: rgba(255, 255, 255, 0.8); */
 	display: flex;
 	justify-content: center;
-}
-
-.loader img {
-	/* position: fixed;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%); */
 }
 
 /* Image Container */

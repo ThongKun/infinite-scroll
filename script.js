@@ -9,8 +9,8 @@ let initialLoad = true;
 
 // Unsplash API
 let count = 10;
-let query = 'nature green';
-let orientation = 'landscape';
+let query = 'animal and nature';
+let orientation = '';
 const apiKey = 'FlfzKo1uEkXxvQxveaFhC3P8Sh721oujqBnUG13XA7M';
 let apiUrl = `https://api.unsplash.com/photos/random?client_id=${apiKey}&query=${query}&orientation=${orientation}&count=${count}`;
 
